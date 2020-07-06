@@ -137,6 +137,13 @@ $checkbox-border-color: $light-gray;
 $checkbox-border-radius: 2px;
 
 
+// header
+$header-height: (
+  xs: 60px,
+  md: 70px,
+  xl: 80px
+);
+
 // footer
 $footer-height: (
   xs: 146px,

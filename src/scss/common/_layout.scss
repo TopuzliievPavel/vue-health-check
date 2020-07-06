@@ -1,4 +1,4 @@
-#app {
+.page {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,8 +17,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
+.main {
   flex-grow: 1;
+}
+
+.header-heightfix {
+  height: map_get($header-height, "xs");
+  flex: 0 0 map_get($header-height, "xs");
+  @include media('>=medium') {
+    height: map_get($header-height, "md");
+    flex: 0 0 map_get($header-height, "md");
+  }
+
+  @include media('>=xlarge') {
+    height: map_get($header-height, "xl");
+    flex: 0 0 map_get($header-height, "xl");
+  }
 }
 
 .container {
@@ -34,7 +48,7 @@ main {
   }
 }
 
-.body--bg {
+.page--bg {
   background-color: $bg-body;
 }
 

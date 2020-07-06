@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="page">
     <the-header></the-header>
+    <div class="header-heightfix"></div>
     <router-view/>
     <the-footer></the-footer>
   </div>
@@ -21,5 +22,4 @@
 
 <style lang="scss">
   @import 'scss/_common.scss';
-
 </style>

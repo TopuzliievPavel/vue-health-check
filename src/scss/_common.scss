@@ -1,6 +1,4 @@
-@import 'base/variables';
-@import 'base/include-media'; // new breakpoint
-@import 'base/mixins';
+@import 'base-styles';
 
 @import "fonts/icomoon";
 
@@ -9,4 +7,8 @@
 @import "common/typography";
 @import "common/indents";
 @import "common/colors";
-@import "base/helpers";
+
+@import "components/intro";
+@import "components/buttons";
+@import "components/form";
+@import "components/select";

@@ -21,8 +21,10 @@
           </li>
         </ul>
 
-        <div class="dropdown dropdown-language order-negative-presmall order-normal-xlarge">
-          <button class="btn-language font-weight-semi btn-language-js" type="button">
+        <div class="dropdown dropdown-language order-negative-presmall order-normal-xlarge"
+             :class="{'dropdown-language--active': openLanguageDropdown}">
+          <button class="btn-language font-weight-semi" type="button" @click="openLanguageDropdown =
+          !openLanguageDropdown">
             EN
             <svg class="btn-language__icon" width="20" height="20" viewBox="0 0 20 20"
                  xmlns="http://www.w3.org/2000/svg">
@@ -61,12 +63,18 @@
 
 <script>
   export default {
-    name: 'TheFooter'
+    name: 'TheFooter',
+    data () {
+      return {
+        openLanguageDropdown: false
+      }
+    }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @import "../../scss/base-styles";
+  @import "../../scss/components/dropdown";
 
   .footer__inner {
     position: relative;
