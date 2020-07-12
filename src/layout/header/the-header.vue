@@ -3,47 +3,27 @@
     <div class="container">
       <div class="header__inner">
         <router-link class="logo" to="/" tabindex="1">
-          <img src="../../assets/images/svg-icons/logo_healthcheck.svg" alt="blue heart near the black text - HealthCheck">
+          <img src="@/assets/images/svg-icons/logo_healthcheck.svg" alt="blue heart near the black text - HealthCheck">
         </router-link>
-        <div class="dropdown header__dropdown"
-             :class="{'header__dropdown--active': openUserDropdown}"
-        >
-          <button class="btn-user btn-reset" type="button" @click="openUserDropdown = !openUserDropdown">
-            <span class="btn-user__text">Sally Johnson</span>
-            <img class="btn-user__img" src="../../assets/images/img_girl.png" alt="icon person">
-          </button>
-          <ul class="dropdown__menu dropdown-user__menu dropdown-user__menu-js">
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__btn dropdown-user__btn">
-                <span class="icon icon-person text-primary"></span>
-                My profile
-              </a>
-            </li>
-            <li class="dropdown__item">
-              <a href="#" class="dropdown__btn dropdown-user__btn">
-                <span class="icon icon-folder text-primary"></span>
-                My results
-              </a>
-            </li>
-            <li class="dropdown__item">
-              <button class="dropdown__btn dropdown-user__btn" type="button">
-                <span class="icon icon-log-out"></span>
-                Log out
-              </button>
-            </li>
-          </ul>
-        </div>
+        <the-header-dropdown></the-header-dropdown>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+  import TheHeaderDropdown from '@/layout/header/header-dropdown/the-header-dropdown.vue'
+
   export default {
     name: 'TheHeader',
+    components: {
+      TheHeaderDropdown
+    },
     data () {
       return {
-        openUserDropdown: false
+        dropdownDataLinks: [
+
+        ]
       }
     }
   }

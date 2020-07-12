@@ -7,6 +7,7 @@ export const SignUp = () => import(/* webpackChunkName: "SignUp" */ '@/layout/pa
 export const TestPage = () => import(/* webpackChunkName: "TestPage" */ '@/layout/pages/test-page/test-page.vue');
 export const RestorePage = () => import(/* webpackChunkName: "RestorePage" */ '@/layout/pages/restore-page/restore-page.vue');
 export const VerifyPage = () => import(/* webpackChunkName: "VerifyPage" */ '@/layout/pages/verify-page/verify-page.vue');
+export const ProfilePage = () => import(/* webpackChunkName: "VerifyPage" */ '@/layout/pages/profile-page/profile-page.vue');
 
 Vue.use(VueRouter);
 
@@ -55,6 +56,14 @@ const routes = [
     // this generates a separate chunk (onboarding.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: VerifyPage
+  },
+  {
+    path: '/profile',
+    name: 'ProfilePage',
+    // route level code-splitting
+    // this generates a separate chunk (onboarding.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: ProfilePage
   }
 ];
 
