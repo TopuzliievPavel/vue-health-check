@@ -18,13 +18,6 @@
     name: 'TheHeader',
     components: {
       TheHeaderDropdown
-    },
-    data () {
-      return {
-        dropdownDataLinks: [
-
-        ]
-      }
     }
   }
 </script>

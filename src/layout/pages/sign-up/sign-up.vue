@@ -6,7 +6,7 @@
         <span class="sub-text">Autofill forms using social networks:</span>
         <ul class="social-list">
           <li class="social-list__item">
-            <a class="social-list__link bg-gray-100" href="#"><span class="icon icon-facebook facebook-bg"></span></a>
+            <a class="social-list__link bg-gray-100"><span class="icon icon-facebook facebook-bg"></span></a>
           </li>
           <li class="social-list__item">
             <a class="social-list__link bg-gray-100" href="#">
