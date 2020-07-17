@@ -14,29 +14,8 @@
     <ul class="dropdown__menu dropdown-language__menu"
         v-if="isOpenLanguageDropdown"
     >
-      <li class="dropdown__item">
-        <button class="dropdown__btn dropdown-language__btn" type="button">
-          <span class="custom-after"></span>
-          Español
-        </button>
-      </li>
-      <li class="dropdown__item">
-        <button class="dropdown__btn dropdown-language__btn" type="button">
-          <span class="custom-after"></span>
-          Russian
-        </button>
-      </li>
-      <li class="dropdown__item">
-        <button class="dropdown__btn dropdown-language__btn dropdown-language__btn--active" type="button">
-          <span class="custom-after"></span>
-          English
-        </button>
-      </li>
+      <slot></slot>
     </ul>
-    <div class="dropdown__overlay"
-         v-if="isOpenLanguageDropdown"
-         @click="toggleLanguageDropdown"
-    ></div>
   </div>
 </template>
 
@@ -48,9 +27,20 @@
         isOpenLanguageDropdown: false
       }
     },
+    created() {
+      window.addEventListener("click", this.closeLanguageDropdown);
+    },
+    beforeDestroy() {
+      window.removeEventListener("click", this.closeLanguageDropdown);
+    },
     methods: {
       toggleLanguageDropdown () {
         this.isOpenLanguageDropdown = !this.isOpenLanguageDropdown
+      },
+      closeLanguageDropdown(e) {
+        if (!this.$el.contains(e.target)) {
+          this.isOpenLanguageDropdown = false;
+        }
       }
     }
   }

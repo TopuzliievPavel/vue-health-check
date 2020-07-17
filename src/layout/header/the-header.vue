@@ -5,7 +5,30 @@
         <router-link class="logo" to="/" tabindex="1">
           <img src="@/assets/images/svg-icons/logo_healthcheck.svg" alt="blue heart near the black text - HealthCheck">
         </router-link>
-        <the-header-dropdown></the-header-dropdown>
+        <the-header-dropdown>
+          <li class="dropdown__item">
+            <router-link class="dropdown__btn dropdown-user__btn"
+                         :to="{name: 'ProfilePage'}"
+            >
+              <span class="icon icon-person text-primary"></span>
+              My profile
+            </router-link>
+          </li>
+          <li class="dropdown__item">
+            <router-link class="dropdown__btn dropdown-user__btn"
+                         :to="{name: 'ProfilePage'}"
+            >
+              <span class="icon icon-folder text-primary"></span>
+              My results
+            </router-link>
+          </li>
+          <li class="dropdown__item">
+            <button class="dropdown__btn dropdown-user__btn" type="button">
+              <span class="icon icon-log-out"></span>
+              Log out
+            </button>
+          </li>
+        </the-header-dropdown>
       </div>
     </div>
   </header>

@@ -10,33 +10,8 @@
       <img class="btn-user__img" src="@/assets/images/img_girl.png" alt="icon person">
     </button>
     <ul v-if="isOpenUserDropdown" class="dropdown__menu dropdown-user__menu">
-      <li class="dropdown__item">
-        <router-link class="dropdown__btn dropdown-user__btn"
-                     :to="{name: 'ProfilePage'}"
-        >
-          <span class="icon icon-person text-primary"></span>
-          My profile
-        </router-link>
-      </li>
-      <li class="dropdown__item">
-        <router-link class="dropdown__btn dropdown-user__btn"
-                     :to="{name: 'ProfilePage'}"
-        >
-          <span class="icon icon-folder text-primary"></span>
-          My results
-        </router-link>
-      </li>
-      <li class="dropdown__item">
-        <button class="dropdown__btn dropdown-user__btn" type="button">
-          <span class="icon icon-log-out"></span>
-          Log out
-        </button>
-      </li>
+      <slot></slot>
     </ul>
-    <div class="dropdown__overlay"
-         v-if="isOpenUserDropdown"
-         @click="toggleUserDropdown"
-    ></div>
   </div>
 </template>
 
@@ -48,9 +23,20 @@
         isOpenUserDropdown: false
       }
     },
+    created() {
+      window.addEventListener("click", this.closeUserDropdown);
+    },
+    beforeDestroy() {
+      window.removeEventListener("click", this.closeUserDropdown);
+    },
     methods: {
       toggleUserDropdown () {
         this.isOpenUserDropdown = !this.isOpenUserDropdown
+      },
+      closeUserDropdown(e) {
+        if (!this.$el.contains(e.target)) {
+          this.isOpenUserDropdown = false;
+        }
       }
     }
   }

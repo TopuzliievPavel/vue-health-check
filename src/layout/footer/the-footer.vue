@@ -21,7 +21,26 @@
           </li>
         </ul>
 
-        <the-footer-dropdown></the-footer-dropdown>
+        <the-footer-dropdown>
+          <li class="dropdown__item">
+            <button class="dropdown__btn dropdown-language__btn" type="button">
+              <span class="custom-after"></span>
+              Español
+            </button>
+          </li>
+          <li class="dropdown__item">
+            <button class="dropdown__btn dropdown-language__btn" type="button">
+              <span class="custom-after"></span>
+              Russian
+            </button>
+          </li>
+          <li class="dropdown__item">
+            <button class="dropdown__btn dropdown-language__btn dropdown-language__btn--active" type="button">
+              <span class="custom-after"></span>
+              English
+            </button>
+          </li>
+        </the-footer-dropdown>
         <div class="footer__copyright-holder order-negative-xlarge">
                 <span class="footer__copyright">Copyright 2020 Stratum Health Solutions, LLC.
             All rights reserved.</span>
